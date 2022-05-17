@@ -1,5 +1,14 @@
 $color-primary: #F1CDB3;
 $color-dark-3xl: #292929;
+$color-dark-s: #CDCDCD;
+$color-dark-1: #545454;
+$color-dark-xl: #4C4C4C;
+
+@mixin font-georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+}
 
 * {
     margin: 0;
@@ -35,9 +44,14 @@ nav ul{
     list-style: none;
 }
 
+h3 {
+    @include font-georgia;
+    font-size: 35px;
+    line-height: 130%;
+}
+
 .title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
+    @include font-georgia;
     font-size: 32px;
     line-height: 110%;
     color: $color-primary;
@@ -88,26 +102,29 @@ nav ul{
 }
 
 .heading {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
+    @include font-georgia;
     font-size: 44px;
     line-height: 130%;
     width: 310px;
     color: #FFFFFF;
 }
 
-.subheading {
-    margin-top: 42px;
+.paragraph-1 {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
-    color: #CDCDCD;
+}
+
+.subheading {
+    margin-top: 42px;
     width: 460px;
+    color: $color-dark-s;
 }
 
 .button-contained {
+    @include font-georgia;
     text-align: center;
     width: 207px;
     height: 52px;
@@ -116,9 +133,6 @@ nav ul{
     border: none;
     padding: 15px 45px;
     color: $color-dark-3xl;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 17px;
     line-height: 130%;
 }
@@ -126,5 +140,25 @@ nav ul{
 .start-screen-content {
     .button-contained {
         margin-top: 42px;
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 215px 100px 215px;
+
+    .about-content {
+        margin-left: 120px;
+    }
+
+    h3 {
+        line-height: 130%;
+        color: $color-dark-1;
+    }
+
+    .paragraph-1 {
+        margin-top: 25px;
+        color: $color-dark-xl;
     }
 }
