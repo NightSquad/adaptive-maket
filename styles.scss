@@ -146,6 +146,13 @@ h4 {
     letter-spacing: 0.06em;
 }
 
+h5 {
+    @include font-georgia;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
 // ----------------------------------- Header -------------------------------------
 
 .title {
@@ -318,6 +325,55 @@ h4 {
                     margin-top: 30px;
                     color: $color-dark-1;
                 }
+            }
+        }
+    }
+}
+
+//------------------------------------------ donation ----------------------------------------
+
+.donation {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0 100px;
+
+    .donation-content {
+        display: flex;
+
+        #donation-dog {
+            margin-top: 11px;
+        }
+
+        .content {
+            margin-left: 30px;
+            width: 380px;
+
+            h5 {
+                color: $color-dark-1;
+                margin-top: 20px;
+            }
+
+            .credit-card {
+                width: fit-content;
+                margin-top: 20px;
+                padding: 10px 15px;
+                background-color: $color-primary;
+                border-radius: 9px;
+                display: flex;
+                
+                h4 {
+                    margin-left: 15px;
+                }
+            }
+
+            .donation-description {
+                margin-top: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-style: italic;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 18px;
+                color: #B2B2B2;
             }
         }
     }
