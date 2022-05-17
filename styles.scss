@@ -3,11 +3,90 @@ $color-dark-3xl: #292929;
 $color-dark-s: #CDCDCD;
 $color-dark-1: #545454;
 $color-dark-xl: #4C4C4C;
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6; 
 
 @mixin font-georgia {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: 400;
+}
+
+@mixin button {
+    text-align: center;
+    width: fit-content;
+    height: 52px;
+    border-radius: 100px;
+    padding: 15px 45px;
+    color: $color-dark-3xl;
+    font-size: 17px;
+    line-height: 130%;
+}
+
+// ----------------------------------- General -------------------------------------
+.paragraph-1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+}
+
+.button-arrow {
+    width: 52px;
+    height: 52px;
+    border: 2px solid $color-primary;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.button-arrow:hover {
+    background-color: $color-primary;
+}
+
+.button-contained {
+    @include font-georgia;
+    @include button;
+    background-color: $color-primary;
+    border: none;
+    letter-spacing: 0.06em;
+}
+
+.button-contained:hover {
+    background-color: #FDDCC4;
+}
+
+.button-outlined {
+    @include font-georgia;
+    @include button;
+    background-color: transparent;
+    border: 2px solid $color-primary;
+}
+
+.button-outlined:hover {
+    background-color: $color-primary;
+}
+
+.card {
+    width: 270px;
+    height: 435px;
+    background-color: $color-light-s;
+
+    img {
+        width: 270px;
+        height: 270px;
+    }
+
+    .pets-card-title {
+        @include font-georgia;
+        line-height: 23px;
+        font-size: 20px;
+        margin: 30px 98px;
+    }
+
+    .button-outlined {
+        margin: 0 41.5px 30px;
+    }
 }
 
 * {
@@ -50,6 +129,8 @@ h3 {
     line-height: 130%;
 }
 
+// ----------------------------------- Header -------------------------------------
+
 .title {
     @include font-georgia;
     font-size: 32px;
@@ -91,6 +172,8 @@ h3 {
     border-bottom: 3px solid $color-primary;
 }
 
+// ----------------------------------- Start screen -------------------------------------
+
 .start-screen-content {
     margin-top: 60px;
     display: flex;
@@ -109,40 +192,19 @@ h3 {
     color: #FFFFFF;
 }
 
-.paragraph-1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-}
-
 .subheading {
     margin-top: 42px;
     width: 460px;
     color: $color-dark-s;
 }
 
-.button-contained {
-    @include font-georgia;
-    text-align: center;
-    width: 207px;
-    height: 52px;
-    background-color: $color-primary;
-    border-radius: 100px;
-    border: none;
-    padding: 15px 45px;
-    color: $color-dark-3xl;
-    font-size: 17px;
-    line-height: 130%;
-}
 
 .start-screen-content {
     .button-contained {
         margin-top: 42px;
     }
 }
-
+// ----------------------------------- About -------------------------------------
 .about {
     display: flex;
     justify-content: space-between;
@@ -161,4 +223,44 @@ h3 {
         margin-top: 25px;
         color: $color-dark-xl;
     }
+}
+
+// ----------------------------------- Pets -------------------------------------
+
+.pets {
+    padding: 80px 40px 100px;
+    background-color: $color-light-l;
+
+    .pets-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h3 {
+        color: $color-dark-1;
+        margin: 0 400px;
+        text-align: center;
+        width: 400px;
+        letter-spacing: 0.06em;
+    }
+
+    .slider {
+        margin: 60px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .slider-items {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 53px;
+
+        .card:not(:first-child) {
+            margin-left: 90px;
+        }
+    }
+
 }
