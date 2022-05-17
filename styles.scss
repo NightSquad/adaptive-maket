@@ -378,3 +378,57 @@ h5 {
         }
     }
 }
+
+.footer {
+    background: url('./assets/images/start-screen-gradient-background.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
+    padding: 40px 40px 0 40px;
+
+    .footer-content {
+        display: flex;
+        column-gap: 160px;
+
+        .content-column {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            h3 {
+                color: #FFFFFF;
+            }
+
+            h4 {
+                color: $color-primary;
+                display: flex;
+                align-items: center;
+            }
+
+            .info {
+                display: flex;
+                column-gap: 20px;
+
+                .email-icon {
+                    width: 40px;
+                    height: 26px;
+                }
+                
+                .phone-icon {
+                    width: 40px;
+                    height: 32px;
+                }
+
+                .marker-icon {
+                    width: 22px;
+                    height: 32px;
+                    align-self: center;
+                }
+            }
+        }
+
+        #contacts {
+            row-gap: 40px;
+        }
+
+        #locations {
+            row-gap: 30px;
+        }
+    }
+}
