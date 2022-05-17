@@ -19,8 +19,10 @@ $color-light-l: #F6F6F6;
     border-radius: 100px;
     padding: 15px 45px;
     color: $color-dark-3xl;
+    line-height: 0;
     font-size: 17px;
-    line-height: 130%;
+    letter-spacing: 0.06em;
+    box-sizing: border-box;
 }
 
 // ----------------------------------- General -------------------------------------
@@ -49,7 +51,6 @@ $color-light-l: #F6F6F6;
     @include button;
     background-color: $color-primary;
     border: none;
-    letter-spacing: 0.06em;
 }
 
 .button-contained:hover {
@@ -71,6 +72,9 @@ $color-light-l: #F6F6F6;
     width: 270px;
     height: 435px;
     background-color: $color-light-s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
     img {
         width: 270px;
@@ -81,11 +85,13 @@ $color-light-l: #F6F6F6;
         @include font-georgia;
         line-height: 23px;
         font-size: 20px;
-        margin: 30px 98px;
+        text-align: center;
+        margin: 30px 0;
+        letter-spacing: 0.06em;
     }
 
     .button-outlined {
-        margin: 0 41.5px 30px;
+        margin-bottom: 30px;
     }
 }
 
@@ -120,13 +126,24 @@ nav {
 nav ul{
     display: flex;
     justify-content: space-between;
+    column-gap: 35px;
     list-style: none;
+    margin-left: -5px;
 }
 
 h3 {
     @include font-georgia;
     font-size: 35px;
     line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-1;
+}
+
+h4 {
+    @include font-georgia;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
 }
 
 // ----------------------------------- Header -------------------------------------
@@ -136,6 +153,7 @@ h3 {
     font-size: 32px;
     line-height: 110%;
     color: $color-primary;
+    letter-spacing: 0.06em;
 }
 
 .subtitle {
@@ -145,7 +163,9 @@ h3 {
     font-style: normal;
     font-size: 13px;
     line-height: 15px;
+    letter-spacing: 0.1em;
     color: #FFFFFF;
+    margin-left: 4px;
 }
 
 .link {
@@ -157,11 +177,7 @@ h3 {
     line-height: 160%;
     color: #CDCDCD;
     transition: color .1s ease;
-    padding-bottom: 2px;
-}
-
-.link:not(first-child) {
-    margin-left: 35px;
+    padding-bottom: 4px;
 }
 
 .link:hover {
@@ -178,45 +194,46 @@ h3 {
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
-}
-
-.content {
-    margin-top: 163px;
-}
-
-.heading {
-    @include font-georgia;
-    font-size: 44px;
-    line-height: 130%;
-    width: 310px;
-    color: #FFFFFF;
-}
-
-.subheading {
-    margin-top: 42px;
-    width: 460px;
-    color: $color-dark-s;
-}
 
 
-.start-screen-content {
-    .button-contained {
+    .content {
+        margin-top: 163px;
+    }
+
+    .heading {
+        @include font-georgia;
+        font-size: 44px;
+        line-height: 130%;
+        width: 310px;
+        color: #FFFFFF;
+    }
+
+    .subheading {
         margin-top: 42px;
+        width: 460px;
+        color: $color-dark-s;
+    }
+
+
+    .start-screen-content {
+        .button-contained {
+            margin-top: 42px;
+        }
     }
 }
 // ----------------------------------- About -------------------------------------
 .about {
-    display: flex;
-    justify-content: space-between;
-    padding: 80px 215px 100px 215px;
+    padding: 80px 40px 100px;
 
     .about-content {
-        margin-left: 120px;
+        display: flex;
+        justify-content: center;
     }
 
-    h3 {
-        line-height: 130%;
-        color: $color-dark-1;
+    .content {
+        margin-top: 14px;
+        margin-left: 120px;
+        width: 430px;
     }
 
     .paragraph-1 {
@@ -239,8 +256,6 @@ h3 {
     }
 
     h3 {
-        color: $color-dark-1;
-        margin: 0 400px;
         text-align: center;
         width: 400px;
         letter-spacing: 0.06em;
@@ -262,5 +277,48 @@ h3 {
             margin-left: 90px;
         }
     }
+}
 
+// -------------------------------------------- Help ---------------------------------------------------
+
+.help {
+    padding: 80px 40px 100px;
+    background-color: #FFFFFF;
+
+    .help-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+            text-align: center;
+        }
+
+        .list {
+            margin-top: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            row-gap: 55px;
+            column-gap: 120px;
+
+            section {
+                height: 113px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+                h4 {
+                    margin-top: 30px;
+                    color: $color-dark-1;
+                }
+            }
+        }
+    }
 }
