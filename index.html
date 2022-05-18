@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/bundle.js"></script>
+    <link rel="stylesheet" href="./dist/main.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,15 +12,15 @@
         <div class="start-screen">
             <header>
                 <div class="logo">
-                    <p class="title">Cozy House</p>
+                    <h1 class="title"><a href="#">Cozy House</a></h1>
                     <p class="subtitle">Shelter for pets in Boston</p>
                 </div>
                 <nav>
                     <ul>
                         <li><a class='link active' href="#">About the shelter</a></li>
                         <li><a class='link' href="#">Our pets</a></li>
-                        <li><a class='link' href="#">Help the shelter</a></li>
-                        <li><a class='link' href="#">Contacts</a></li>
+                        <li><a class='link' href="#help">Help the shelter</a></li>
+                        <li><a class='link' href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
             </header>
@@ -28,7 +28,7 @@
                 <div class="content">
                     <h2 class="heading">Not only people need a house</h2>
                     <p class="paragraph-1 subheading">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                    <button class="button-contained">Make a friend</button>
+                    <button class="button-contained"><a href="#pets">Make a friend</a></button>
                 </div>
                 <img src="./assets/images/start-screen-puppy.png" alt="puppy">
             </div>
@@ -43,34 +43,56 @@
                 </div>
             </div>
         </div>
-        <div class="pets">
+        <div id="pets" class="pets">
             <div class="pets-content">
                 <h3>Our friends who<br>are looking for a house</h3>
                 <div class="slider">
                     <button class="button-arrow"><</button>
-                    <div class="slider-items">
-                        <div class="card">
-                            <img src="./assets/images/pets/pets-katrine.png" alt="katrine">
-                            <p class="pets-card-title">Katrine</p>
-                            <button class="button-outlined">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="./assets/images/pets/pets-jennifer.png" alt="jennifer">
-                            <p class="pets-card-title">Jennifer</p>
-                            <button class="button-outlined">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="./assets/images/pets/pets-woody.png" alt="Woody">
-                            <p class="pets-card-title">Woody</p>
-                            <button class="button-outlined">Learn more</button>
+                    <div class="sliderBox">
+                        <div class="slider-items">
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-katrine.png" alt="katrine">
+                                <p class="pets-card-title">Katrine</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-jennifer.png" alt="jennifer">
+                                <p class="pets-card-title">Jennifer</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-woody.png" alt="Woody">
+                                <p class="pets-card-title">Woody</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-woody.png" alt="Woody">
+                                <p class="pets-card-title">Woody</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-woody.png" alt="Woody">
+                                <p class="pets-card-title">Woody</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-woody.png" alt="Woody">
+                                <p class="pets-card-title">Woody</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>
+                            <div class="card">
+                                <img src="./assets/images/pets/pets-katrine.png" alt="katrine">
+                                <p class="pets-card-title">Katrine</p>
+                                <button class="button-outlined">Learn more</button>
+                            </div>                            
                         </div>
                     </div>
                     <button class="button-arrow">></button>
                 </div>
-                <button class="button-contained">Get to know the rest</button>
+                <button class="button-contained"><a href="./our_pets.html">Get to know the rest</a></button>
             </div>
         </div>
-        <div class="help">
+        <div id="help" class="help">
             <div class="help-content">
                 <h3>How you can help <br/C>our shelter</h3>
                 <div class="list">
@@ -113,7 +135,7 @@
                 </div>
             </div>
         </div>
-        <div class="donation">
+        <div id="donation" class="donation">
             <div class="donation-content">
                 <img id="donation-dog" src="./assets/images/donation-dog.png" width="505px" height="261px" alt="donation-dog">
                 <div class="content">
@@ -121,7 +143,7 @@
                     <h5>Name of the bank / Type of bank account</h5>
                     <div class="credit-card">
                         <img class="credit-card-img" src="./assets/icons/credit-card.svg" alt="credit-card">
-                        <h4>8380 2880 8028 8791 7435</h4>
+                        <h4><a href="#donation">8380 2880 8028 8791 7435</a></h4>
                     </div>
                     <p class="donation-description">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
@@ -133,22 +155,22 @@
                     <h3>For questions<br>and suggestions</h3>
                     <section class="info">
                         <img class="email-icon" src="./assets/icons/icon-email.svg" alt="icon-email">
-                        <h4>email@shelter.com</h4>
+                        <h4><a href="mailto:email@shelter.com">email@shelter.com</a></h4>
                     </section>
                     <section class="info">
                         <img class="phone-icon" src="./assets/icons/icon-phone.svg" alt="icon-phone">
-                        <h4>+13 674 567 75 54</h4>
+                        <h4><a href="tel:+136745677554">+13 674 567 75 54</a></h4>
                     </section>
                 </section>
                 <section id="locations" class='content-column'>
                     <h3>We are waiting<br>for your visit</h3>
                     <section class="info">
                         <img class="marker-icon" src="./assets/icons/icon-marker.svg" alt="icon-marker">
-                        <h4>1 Central Street, Boston<br>(entrance from the store)</h4>
+                        <h4><a href="https://www.google.ru/maps/place/Москва/@55.5807482,36.8251496,9z" target="_blank">1 Central Street, Boston<br>(entrance from the store)</a></h4>
                     </section>
                     <section class="info">
                         <img class="marker-icon" src="./assets/icons/icon-marker.svg" alt="icon-marker">
-                        <h4>18 South Park, London </h4>
+                        <h4><a href="https://www.google.ru/maps/place/Москва/@55.5807482,36.8251496,9z" target="_blank">18 South Park, London</a></h4>
                     </section>
                 </section>
                 <img src="./assets/images/footer-puppy.png" alt="">
@@ -156,4 +178,5 @@
         </footer>
     </div>
 </body>
+<script src="./dist/bundle.js"></script>
 </html>

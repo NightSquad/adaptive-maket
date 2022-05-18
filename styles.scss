@@ -40,6 +40,7 @@ $color-light-l: #F6F6F6;
     border: 2px solid $color-primary;
     background-color: transparent;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .button-arrow:hover {
@@ -95,9 +96,19 @@ $color-light-l: #F6F6F6;
     }
 }
 
+.card:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.card:hover .button-outlined {
+    background-color: $color-primary;
+}
+
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -153,14 +164,19 @@ h5 {
     letter-spacing: 0.06em;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 // ----------------------------------- Header -------------------------------------
 
 .title {
     @include font-georgia;
     font-size: 32px;
     line-height: 110%;
-    color: $color-primary;
     letter-spacing: 0.06em;
+    color: $color-primary;
 }
 
 .subtitle {
@@ -222,10 +238,8 @@ h5 {
     }
 
 
-    .start-screen-content {
-        .button-contained {
-            margin-top: 42px;
-        }
+    .button-contained {
+        margin-top: 42px;
     }
 }
 // ----------------------------------- About -------------------------------------
@@ -275,10 +289,16 @@ h5 {
         align-items: center;
     }
 
-    .slider-items {
-        display: flex;
-        justify-content: space-between;
+    .sliderBox {
+        width: 990px;
+        overflow: hidden;
         margin: 0 53px;
+
+        .slider-items {
+            display: flex;
+            transition: all 0.5s ease;
+            transform: translateX(0px);
+        }
 
         .card:not(:first-child) {
             margin-left: 90px;
