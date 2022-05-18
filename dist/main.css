@@ -9,13 +9,19 @@
   line-height: 160%;
 }
 
-.button-arrow {
+.button-round {
   width: 52px;
   height: 52px;
   border: 2px solid #F1CDB3;
   background-color: transparent;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-round #left-button {
+  transform: rotate(180deg);
 }
 
 .button-arrow:hover {
@@ -73,6 +79,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  z-index: 1;
 }
 .card img {
   width: 270px;
@@ -169,6 +176,75 @@ h5 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(41, 41, 41, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-window {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background-color: #FAFAFA;
+  display: flex;
+  border-radius: 9px;
+  z-index: 10;
+}
+.modal .modal-window .close {
+  position: absolute;
+  top: -52px;
+  right: -52px;
+}
+.modal .modal-window .close img {
+  width: 12px;
+  height: 12px;
+}
+.modal .modal-window img {
+  width: 500px;
+  height: 500px;
+  border-radius: 9px;
+}
+.modal .modal-window .content {
+  margin: 50px 20px 88px 29px;
+}
+.modal .modal-window .content h3 {
+  color: black;
+}
+.modal .modal-window .content h4 {
+  margin-top: 10px;
+}
+.modal .modal-window .content .description {
+  margin: 40px 0;
+  color: black;
+}
+.modal .modal-window .content ul {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  list-style: none;
+  margin-left: 1px;
+}
+.modal .modal-window .content ul li {
+  position: relative;
+  margin-left: 14px;
+}
+.modal .modal-window .content ul li::before {
+  position: absolute;
+  background: url(f589aaec7ab7727dd7f2.svg);
+  width: 4px;
+  height: 4px;
+  content: "";
+  left: -14px;
+  top: 40%;
 }
 
 .title {
