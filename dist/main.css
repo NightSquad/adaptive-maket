@@ -19,9 +19,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 .button-round #left-button {
   transform: rotate(180deg);
+}
+
+.button-round + .active {
+  background-color: #F1CDB3;
 }
 
 .button-arrow:hover {
@@ -188,6 +193,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 .modal .modal-window {
   position: relative;
@@ -196,7 +202,6 @@ a {
   background-color: #FAFAFA;
   display: flex;
   border-radius: 9px;
-  z-index: 10;
 }
 .modal .modal-window .close {
   position: absolute;
@@ -341,6 +346,20 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.pets .navigation {
+  display: flex;
+  margin-top: 45px;
+  column-gap: 20px;
+}
+.pets .cards-container {
+  margin-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+}
+.pets .cards-container .card {
+  margin: 15px 0;
 }
 .pets h3 {
   text-align: center;
@@ -487,4 +506,20 @@ a {
 }
 .footer .footer-content #locations {
   row-gap: 30px;
+}
+
+.dark {
+  padding: 30px 40px;
+}
+.dark .logo .title {
+  color: #545454;
+}
+.dark .logo .subtitle {
+  color: #292929;
+}
+.dark nav .link {
+  color: #545454;
+}
+.dark nav .active {
+  color: #292929;
 }

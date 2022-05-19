@@ -4,16 +4,17 @@ const petsInfo = require('./petsInfo.json')
 
 let offset = 0;
 
-const   buttons = [...document.getElementsByClassName('button-round')],
-        leftButton = buttons[0],
-        rightButton = buttons[1],
-        items = [...document.getElementsByClassName('card')],
-        sliderBox = document.getElementsByClassName('slider-items')[0];
 
-items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
+if (location.pathname === '/') {
+var   leftButton = document.getElementById('left-button'),
+        rightButton = document.getElementById('right-button'),
+        sliderBox = document.getElementsByClassName('slider-items')[0];
 
 leftButton.addEventListener('click', prevSlide);
 rightButton.addEventListener('click', nextSlide);
+}
+const items = [...document.getElementsByClassName('card')];
+items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
 
 function prevSlide() {
     if (offset === 0) return
