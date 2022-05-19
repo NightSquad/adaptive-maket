@@ -6,10 +6,9 @@ let offset = 0;
 
 
 if (location.pathname === '/') {
-var   leftButton = document.getElementById('left-button'),
+var     leftButton = document.getElementById('left-button'),
         rightButton = document.getElementById('right-button'),
         sliderBox = document.getElementsByClassName('slider-items')[0];
-
 leftButton.addEventListener('click', prevSlide);
 rightButton.addEventListener('click', nextSlide);
 }
@@ -17,15 +16,19 @@ const items = [...document.getElementsByClassName('card')];
 items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
 
 function prevSlide() {
+    console.log('clicked')
     if (offset === 0) return
     offset = offset - 360
     sliderBox.style.transform = `translateX(${-offset}px)`
+    console.log(offset)
 }
 
 function nextSlide() {
+    console.log('clicked')
     if (offset == 360 * (items.length-3)) return
     offset = offset + 360
     sliderBox.style.transform = `translateX(${-offset}px)`
+    console.log(offset)
 }
 
 function createModal(name) {

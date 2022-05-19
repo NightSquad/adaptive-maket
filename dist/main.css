@@ -21,7 +21,7 @@
   align-items: center;
   box-sizing: border-box;
 }
-.button-round #left-button {
+.button-round #left-arrow {
   transform: rotate(180deg);
 }
 
@@ -102,6 +102,7 @@
 }
 .card .button-outlined {
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -129,7 +130,7 @@ body {
 }
 
 .start-screen {
-  background: url(0401682208a0c4e8ba15.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
+  background: url(414ad5131a671907e5b9.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   padding: 60px 40px 0 40px;
 }
 
@@ -326,10 +327,9 @@ a {
 .about .about-content {
   display: flex;
   justify-content: center;
+  row-gap: 80px;
 }
 .about .content {
-  margin-top: 14px;
-  margin-left: 120px;
   width: 430px;
 }
 .about .paragraph-1 {
@@ -371,9 +371,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .pets .sliderBox {
-  width: 990px;
+  width: 82%;
   overflow: hidden;
   margin: 0 53px;
 }
@@ -381,9 +382,7 @@ a {
   display: flex;
   transition: all 0.5s ease;
   transform: translateX(0px);
-}
-.pets .sliderBox .card:not(:first-child) {
-  margin-left: 90px;
+  column-gap: 90px;
 }
 
 .help {
@@ -427,6 +426,7 @@ a {
   display: flex;
   justify-content: center;
   padding: 80px 0 100px;
+  background-color: #F6F6F6;
 }
 .donation .donation-content {
   display: flex;
@@ -464,8 +464,10 @@ a {
 }
 
 .footer {
-  background: url(0401682208a0c4e8ba15.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
-  padding: 40px 40px 0 40px;
+  background: url(414ad5131a671907e5b9.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 .footer .footer-content {
   display: flex;
@@ -522,4 +524,85 @@ a {
 }
 .dark nav .active {
   color: #292929;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 768px;
+  }
+
+  .start-screen {
+    padding: 30px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .start-screen .start-screen-content {
+    width: 569px;
+    align-self: center;
+    flex-direction: column;
+  }
+  .start-screen .start-screen-content .content {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 55px;
+  }
+  .start-screen .start-screen-content img {
+    width: 569px;
+    height: 593px;
+    margin-top: 100px;
+    margin-left: 70px;
+  }
+  .start-screen .button-contained {
+    align-self: center;
+  }
+
+  .about {
+    padding: 80px 0 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .about .about-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .pets {
+    padding: 80px 30px 100px;
+  }
+  .pets .sliderBox {
+    margin: 0 12px;
+  }
+  .pets .sliderBox .slider-items {
+    column-gap: 40px;
+  }
+
+  .help {
+    padding: 80px 0 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .help .help-content .list {
+    column-gap: 60px;
+  }
+  .help .help-content .list section {
+    width: 170px;
+  }
+
+  .donation .donation-content {
+    flex-direction: column-reverse;
+  }
+  .donation .donation-content #donation-dog {
+    margin-top: 60px;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+  .footer .footer-content {
+    column-gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 65px;
+  }
 }

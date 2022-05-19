@@ -46,7 +46,7 @@ $color-light-l: #F6F6F6;
     align-items: center;
     box-sizing: border-box;
 
-    #left-button {
+    #left-arrow {
         transform: rotate(180deg);
     }
 }
@@ -106,6 +106,7 @@ $color-light-l: #F6F6F6;
 
     .button-outlined {
         margin-bottom: 30px;
+        cursor: pointer;
     }
 }
 
@@ -134,7 +135,7 @@ body {
 }
 
 .start-screen {
-    background: url('./assets/images/start-screen-gradient-background.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
+    background: url(./assets/images/texture.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
     padding: 60px 40px 0 40px;
 }
 
@@ -343,11 +344,10 @@ a {
     .about-content {
         display: flex;
         justify-content: center;
+        row-gap: 80px;
     }
 
     .content {
-        margin-top: 14px;
-        margin-left: 120px;
         width: 430px;
     }
 
@@ -398,10 +398,11 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
     }
 
     .sliderBox {
-        width: 990px;
+        width: 82%;
         overflow: hidden;
         margin: 0 53px;
 
@@ -409,10 +410,7 @@ a {
             display: flex;
             transition: all 0.5s ease;
             transform: translateX(0px);
-        }
-
-        .card:not(:first-child) {
-            margin-left: 90px;
+            column-gap: 90px;
         }
     }
 }
@@ -467,6 +465,7 @@ a {
     display: flex;
     justify-content: center;
     padding: 80px 0 100px;
+    background-color: $color-light-l;
 
     .donation-content {
         display: flex;
@@ -511,8 +510,10 @@ a {
 }
 
 .footer {
-    background: url('./assets/images/start-screen-gradient-background.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
-    padding: 40px 40px 0 40px;
+    background: url(./assets/images/texture.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
 
     .footer-content {
         display: flex;
@@ -584,4 +585,100 @@ a {
         }
     }
 
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 768px;
+    }
+
+    .start-screen {
+        padding: 30px 30px 0 30px;
+        display: flex;
+        flex-direction: column;
+        .start-screen-content {
+            width: 569px;
+            align-self: center;
+            flex-direction: column;
+
+            .content {
+                margin-top: 0;
+                display: flex;
+                flex-direction: column;
+                margin-left: 55px;
+            }
+
+            img {
+                width: 569px;
+                height: 593px;
+                margin-top: 100px;
+                margin-left: 70px;
+            }
+        }
+    
+        .button-contained {
+            align-self: center;
+        }
+    }
+
+    .about {
+        padding: 80px 0 100px;
+        display: flex;
+        justify-content: center;
+
+        .about-content {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    .pets {
+        padding: 80px 30px 100px;
+
+        .sliderBox {
+            margin: 0 12px;
+
+            .slider-items {
+                column-gap: 40px;
+            }
+        }
+    }
+
+    .help {
+        padding: 80px 0 100px;
+        display: flex;
+        justify-content: center;
+
+        .help-content {
+            .list {
+            column-gap: 60px;
+
+            section {
+                width: 170px;
+            }
+        }  
+        }
+        
+    }
+
+    .donation {
+        .donation-content {
+            flex-direction: column-reverse;
+
+            #donation-dog{
+                margin-top: 60px;
+            } 
+        }
+    }
+
+    .footer {
+        padding-top: 30px;
+        
+        .footer-content {
+            column-gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 65px;
+        }
+    }
 }
