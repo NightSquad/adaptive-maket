@@ -1,6 +1,7 @@
 import './styles.scss'
 const petsInfo = require('./petsInfo.json')
 // console.log(petsInfo.Jennifer)
+console.log(window.innerWidth)
 
 let offset = 0;
 

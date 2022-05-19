@@ -127,6 +127,7 @@ $color-light-l: #F6F6F6;
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -136,7 +137,14 @@ body {
 
 .start-screen {
     background: url(./assets/images/texture.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
-    padding: 60px 40px 0 40px;
+    display: flex;
+    justify-content: center;
+    .wrapper {
+        padding: 60px 40px 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 header {
@@ -339,6 +347,8 @@ a {
 }
 // ----------------------------------- About -------------------------------------
 .about {
+    display: flex;
+    justify-content: center;
     padding: 80px 40px 100px;
 
     .about-content {
@@ -349,6 +359,7 @@ a {
 
     .content {
         width: 430px;
+        margin-left: 120px;
     }
 
     .paragraph-1 {
@@ -360,9 +371,9 @@ a {
 // ----------------------------------- Pets -------------------------------------
 
 .pets {
-    padding: 80px 0 100px;
     display: flex;
     justify-content: center;
+    padding: 80px 40px 100px;
     background-color: $color-light-l;
 
     .pets-content {
@@ -420,8 +431,15 @@ a {
 // -------------------------------------------- Help ---------------------------------------------------
 
 .help {
-    padding: 80px 40px 100px;
+    display: flex;
+    justify-content: center;
     background-color: #FFFFFF;
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 80px 40px 100px;
+    }
 
     .help-content {
         display: flex;
@@ -466,8 +484,13 @@ a {
 .donation {
     display: flex;
     justify-content: center;
-    padding: 80px 0 100px;
-    background-color: $color-light-l;
+    background-color: $color-light-l;  
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 80px 0 100px;
+    }
 
     .donation-content {
         display: flex;
@@ -595,15 +618,17 @@ a {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width:1280px) {
     .wrapper {
-        width: 768px;
+        width: 100%;
     }
 
     .start-screen {
-        padding: 30px 30px 0 30px;
-        display: flex;
-        flex-direction: column;
+        .wrapper {
+            padding: 30px 30px 0 30px;
+            display: flex;
+            flex-direction: column;
+        }
         .start-screen-content {
             width: 569px;
             align-self: center;
@@ -637,10 +662,15 @@ a {
         .about-content {
             flex-direction: column-reverse;
             align-items: center;
+
+            .content {
+                margin-left: 0;
+            }
         }
     }
 
     .pets {
+        padding: 80px 30px 100px;
         .cards-container {
 
             margin-top: 30px;
