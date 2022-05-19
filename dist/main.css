@@ -382,12 +382,11 @@ a {
 .pets .slider {
   margin: 60px 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 .pets .sliderBox {
-  width: 82%;
+  width: 1000px;
   overflow: hidden;
   margin: 0 53px;
 }
@@ -609,8 +608,12 @@ a {
   .pets .cards-container .card {
     margin: 0;
   }
+  .pets .slider {
+    width: 750px;
+  }
   .pets .sliderBox {
     margin: 0 12px;
+    width: 600px;
   }
   .pets .sliderBox .slider-items {
     column-gap: 40px;
@@ -623,6 +626,7 @@ a {
   }
   .help .help-content .list {
     column-gap: 60px;
+    width: 630px;
   }
   .help .help-content .list section {
     width: 170px;

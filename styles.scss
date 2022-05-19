@@ -409,13 +409,12 @@ a {
     .slider {
         margin: 60px 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         width: 100%;
     }
 
     .sliderBox {
-        width: 82%;
+        width: 1000px;
         overflow: hidden;
         margin: 0 53px;
 
@@ -683,8 +682,12 @@ a {
 
         }
 
+        .slider {
+            width: 750px;
+        }
         .sliderBox {
             margin: 0 12px;
+            width: 600px;
 
             .slider-items {
                 column-gap: 40px;
@@ -700,6 +703,7 @@ a {
         .help-content {
             .list {
             column-gap: 60px;
+            width: 630px;
 
             section {
                 width: 170px;
