@@ -120,7 +120,12 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
+  background: url(414ad5131a671907e5b9.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,7 +136,6 @@ body {
 }
 
 .start-screen {
-  background: url(414ad5131a671907e5b9.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   display: flex;
   justify-content: center;
 }
@@ -303,6 +307,10 @@ a {
   border-bottom: 3px solid #F1CDB3;
 }
 
+.burger-menu {
+  display: none;
+}
+
 .start-screen-content {
   margin-top: 60px;
   display: flex;
@@ -330,6 +338,7 @@ a {
 }
 
 .about {
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   padding: 80px 40px 100px;
@@ -486,7 +495,6 @@ a {
 }
 
 .footer {
-  background: url(414ad5131a671907e5b9.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   padding-top: 40px;
   display: flex;
   justify-content: center;
@@ -533,6 +541,11 @@ a {
 }
 
 .dark {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+}
+.dark .wrapper {
   padding: 30px 40px;
 }
 .dark .header-container {
@@ -553,7 +566,7 @@ a {
   color: #292929;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .wrapper {
     width: 100%;
   }
@@ -564,7 +577,6 @@ a {
     flex-direction: column;
   }
   .start-screen .start-screen-content {
-    width: 569px;
     align-self: center;
     flex-direction: column;
   }
@@ -619,7 +631,7 @@ a {
     column-gap: 40px;
   }
 
-  .help {
+  .help .wrapper {
     padding: 80px 0 100px;
     display: flex;
     justify-content: center;
@@ -651,5 +663,188 @@ a {
 
   .dark {
     padding: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .dark {
+    padding: 0;
+  }
+
+  header {
+    padding: 30px 53px 0 10px;
+  }
+  header nav {
+    display: none;
+  }
+  header .burger-menu {
+    display: block;
+  }
+
+  .start-screen .wrapper {
+    padding: 0;
+  }
+  .start-screen .wrapper .start-screen-content {
+    align-items: center;
+    row-gap: 105px;
+  }
+  .start-screen .wrapper .start-screen-content .content {
+    margin-left: 0px;
+    align-items: center;
+    text-align: center;
+  }
+  .start-screen .wrapper .start-screen-content img {
+    margin: 0;
+  }
+  .start-screen .wrapper .heading {
+    font-size: 25px;
+    letter-spacing: 0.06em;
+  }
+  .start-screen .wrapper img {
+    width: 260px;
+    height: 271.77px;
+  }
+  .start-screen .wrapper .subheading {
+    width: 300px;
+  }
+
+  .about {
+    padding: 42px 0;
+  }
+  .about .content {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+  .about h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+  .about .paragraph-1 {
+    margin-top: 22px;
+    font-size: 15px;
+    width: 270px;
+  }
+  .about img {
+    width: 260px;
+    height: 353.6px;
+  }
+
+  .pets {
+    padding: 42px 0;
+  }
+  .pets .navigation {
+    column-gap: 10px;
+  }
+  .pets .cards-container {
+    margin-top: 42px;
+    width: 270px;
+    row-gap: 30px;
+  }
+  .pets h3 {
+    font-size: 25px;
+  }
+  .pets .slider {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 80px;
+    margin: 42px 0;
+  }
+  .pets .sliderBox {
+    width: 270px;
+  }
+  .pets #left-button {
+    order: 1;
+  }
+  .pets #right-button {
+    order: 2;
+  }
+
+  .help .wrapper {
+    padding: 42px 0;
+  }
+  .help .wrapper h3 {
+    font-size: 25px;
+  }
+  .help .help-content .list {
+    margin-top: 42px;
+    width: 290px;
+    column-gap: 30px;
+    justify-content: flex-start;
+  }
+  .help .help-content .list section {
+    width: 130px;
+  }
+  .help .help-content .list section h4 {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  .help .help-content .list section img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .donation .wrapper {
+    padding: 42px 0;
+  }
+  .donation .donation-content {
+    align-items: center;
+  }
+  .donation .donation-content h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+  .donation .donation-content .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    margin-left: 0;
+    row-gap: 20px;
+  }
+  .donation .donation-content .content h5 {
+    margin-top: 0;
+  }
+  .donation .donation-content .content .credit-card {
+    margin-top: 0;
+  }
+  .donation .donation-content .content .credit-card h4 {
+    font-size: 15px;
+  }
+  .donation .donation-content .content .donation-description {
+    margin-top: 0;
+    width: 280px;
+    text-align: justify;
+  }
+  .donation .donation-content #donation-dog {
+    margin-top: 42px;
+    width: 260px;
+    height: 135.2px;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+  .footer img {
+    width: 260px;
+    height: 269px;
+  }
+  .footer h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+  .footer .footer-content {
+    justify-content: center;
+    row-gap: 40px;
+  }
+  .footer .footer-content .info {
+    justify-content: center;
+    row-gap: 40px;
+  }
+  .footer .footer-content #locations h4 {
+    width: 258.28px;
   }
 }
