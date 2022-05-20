@@ -1,7 +1,21 @@
 import './styles.scss'
 const petsInfo = require('./petsInfo.json')
-// console.log(petsInfo.Jennifer)
-console.log(window.innerWidth)
+
+if (window.innerWidth <= 768) {
+    var windowWidth = 'sm'
+} else if (window.innerWidth <=1280) {
+    var windowWidth = 'm'
+} else if (window.innerWidth > 1280) {
+    var windowWidth = 'l'
+}
+
+const sliderConfig = {
+    'sm': {width: 1, offset: 310},
+    'm': {width: 2, offset: 310},
+    'l': {width: 3, offset: 360}
+}
+
+console.log(windowWidth)
 
 let offset = 0;
 
@@ -19,15 +33,16 @@ items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.
 function prevSlide() {
     console.log('clicked')
     if (offset === 0) return
-    offset = offset - 360
+    
+    offset = offset - sliderConfig[windowWidth].offset
     sliderBox.style.transform = `translateX(${-offset}px)`
     console.log(offset)
 }
 
 function nextSlide() {
     console.log('clicked')
-    if (offset == 360 * (items.length-3)) return
-    offset = offset + 360
+    if (offset == sliderConfig[windowWidth].offset * (items.length-sliderConfig[windowWidth].width)) return
+    offset = offset + sliderConfig[windowWidth].offset
     sliderBox.style.transform = `translateX(${-offset}px)`
     console.log(offset)
 }

@@ -746,7 +746,7 @@ a {
     font-size: 25px;
   }
   .pets .slider {
-    width: 100%;
+    width: 320px;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 20px;
