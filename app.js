@@ -15,7 +15,17 @@ const sliderConfig = {
     'l': {width: 3, offset: 360}
 }
 
-console.log(windowWidth)
+const burgerMenuButton = document.getElementById('burger-menu')
+
+burgerMenuButton.addEventListener('click', () => {
+    burgerMenuButton.classList.toggle("rotate")
+
+    const menu = document.getElementsByClassName('menu')[0]
+    menu.classList.toggle("active-menu")
+    document.getElementsByTagName('html')[0].classList.toggle('noscroll')
+
+    // if (menu.classList.value.includes('active-menu')) document.body
+})
 
 let offset = 0;
 

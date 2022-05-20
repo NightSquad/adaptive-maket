@@ -34,6 +34,52 @@ $color-light-l: #F6F6F6;
     line-height: 160%;
 }
 
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(41,41,41, 0.6);
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+
+    .menu-box {
+        opacity: 1;
+        position: absolute;
+        width: 320px;
+        right: -320px;
+        top: 0;
+        height: 100%;
+        background-color: $color-dark-3xl;
+        transition: all .5s ease;
+    }
+
+    .logo {
+        padding-top: 30px;
+        padding-left: 10px;
+    }
+
+    ul {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        list-style: none;
+        .link {
+            font-size: 32px;
+        }
+        
+        .active {
+            color: white;
+        }
+    }
+}
+
 .button-round {
     width: 52px;
     height: 52px;
@@ -127,6 +173,10 @@ $color-light-l: #F6F6F6;
 
 html, body {
     overflow-x: hidden;
+}
+
+.noscroll {
+    overflow: hidden;
 }
 
 body {
@@ -320,6 +370,22 @@ a {
 
 .burger-menu {
     display: none;
+    z-index: 3;
+    background: none;
+    border: none;
+    transition: all .5s ease;
+}
+
+.active-menu {
+    opacity: 1;
+    .menu-box {
+        right: 0;
+        transition: all 0.5s ease;
+    }
+}
+
+.rotate {
+    transform: rotate(90deg);
 }
 
 // ----------------------------------- Start screen -------------------------------------
@@ -785,6 +851,8 @@ a {
 
                 img {
                     margin: 0;
+                    width: 260px;
+                    height: 271.77px;
                 }
             }
 
@@ -793,11 +861,6 @@ a {
                 letter-spacing: 0.06em;
             }
 
-            
-            img {
-                width: 260px;
-                height: 271.77px;
-            } 
             .subheading {
                 width: 300px;
             }
