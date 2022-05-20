@@ -15,7 +15,7 @@
                 <p class="subtitle">Shelter for pets in Boston</p>
             </div>
             <ul>
-                <li><a class='link' href="#">About the shelter</a></li>
+                <li><a class='link' href="/">About the shelter</a></li>
                 <li><a class='link active' href="/our-pets.html">Our pets</a></li>
                 <li><a class='link' href="#help">Help the shelter</a></li>
                 <li><a class='link' href="#contacts">Contacts</a></li>
@@ -48,7 +48,7 @@
                     <h3>Our friends who<br>
                         are looking for a house</h3>
                     <div class="cards-container">
-                        <div class="card">
+                        <!-- <div class="card">
                             <img src="./assets/images/pets/pets-katrine.png" alt="katrine">
                             <p class="pets-card-title">Katrine</p>
                             <button class="button-outlined">Learn more</button>
@@ -86,10 +86,14 @@
                             <img src="./assets/images/pets/pets-freddie.png" alt="freddie">
                             <p class="pets-card-title">Freddie</p>
                             <button class="button-outlined">Learn more</button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="navigation">
-                        <button class="button-round" disabled><<</button><button class="button-round" disabled><</button><span class="button-round active">1</span><button class="button-round">></button><button class="button-round">>></button>
+                        <button id="first-page" class="button-round" disabled><<</button>
+                        <button id='prev-page' class="button-round" disabled><</button>
+                        <span id="currentPage" class="button-round active">1</span>
+                        <button id="next-page" class="button-round">></button>
+                        <button id="last-page" class="button-round">>></button>
                     </div>
                 </div>
             </div>

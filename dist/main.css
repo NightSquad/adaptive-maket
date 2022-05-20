@@ -16,9 +16,8 @@
   right: 0;
   bottom: 0;
   background-color: rgba(41, 41, 41, 0.6);
-  display: flex;
+  display: none;
   justify-content: flex-end;
-  opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 2;
 }
@@ -49,6 +48,18 @@
 }
 .menu ul .active {
   color: white;
+}
+
+.active-menu {
+  right: 0 !important;
+}
+
+.display {
+  display: flex;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }
 
 .button-round {
@@ -359,18 +370,6 @@ a {
   background: none;
   border: none;
   transition: all 0.5s ease;
-}
-
-.active-menu {
-  opacity: 1;
-}
-.active-menu .menu-box {
-  right: 0;
-  transition: all 0.5s ease;
-}
-
-.rotate {
-  transform: rotate(90deg);
 }
 
 .start-screen-content {
@@ -729,6 +728,9 @@ a {
 }
 @media screen and (max-width: 768px) {
   .dark {
+    padding: 30px 50px 30px 10px;
+  }
+  .dark .wrapper {
     padding: 0;
   }
 

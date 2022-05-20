@@ -9,6 +9,32 @@ if (window.innerWidth <= 768) {
     var windowWidth = 'l'
 }
 
+const petContentLimits = {
+    'sm': 3,
+    'm': 6,
+    'l': 8
+}
+
+let currentPage = 1;
+let pages = Math.ceil(Object.keys(petsInfo).length / petContentLimits[windowWidth])
+
+function petContentRender(page) {
+    const cardContainer = document.getElementsByClassName('cards-container')[0]
+    cardContainer.innerHTML = ''
+    let i = petContentLimits[windowWidth] * page
+    let limit = i + petContentLimits[windowWidth]
+    for(i ; i < limit; i++) {
+        if (Object.keys(petsInfo)[i]) {
+            let card = createCard(Object.keys(petsInfo)[i])
+            cardContainer.append(card)
+        } else break
+    }
+}
+
+
+
+petContentRender(currentPage - 1)
+
 const sliderConfig = {
     'sm': {width: 1, offset: 310},
     'm': {width: 2, offset: 310},
@@ -16,29 +42,119 @@ const sliderConfig = {
 }
 
 const burgerMenuButton = document.getElementById('burger-menu')
+const menu = document.getElementsByClassName('menu')[0]
 
 burgerMenuButton.addEventListener('click', () => {
     burgerMenuButton.classList.toggle("rotate")
-
-    const menu = document.getElementsByClassName('menu')[0]
-    menu.classList.toggle("active-menu")
+    menu.classList.toggle("display")
+    setTimeout(() => menu.childNodes[1].classList.toggle('active-menu'), 100)
     document.getElementsByTagName('html')[0].classList.toggle('noscroll')
-
-    // if (menu.classList.value.includes('active-menu')) document.body
 })
+
+menu.addEventListener('click', () => {
+    burgerMenuButton.classList.toggle("rotate")
+    menu.childNodes[1].classList.toggle('active-menu')
+    setTimeout(() => menu.classList.toggle('display'), 200)
+    document.getElementsByTagName('html')[0].classList.toggle('noscroll')
+})
+
+menu.childNodes[1].addEventListener('click', (e) => e.stopPropagation())
+
 
 let offset = 0;
 
+function createCard(name) {
+    let card = document.createElement('div')
+    card.className = 'card'
+
+    let img = document.createElement('img')
+    img.src = `./assets/images/pets/pets-${name.toLowerCase()}.png`
+    img.alt = name
+
+    let petName = document.createElement('p')
+    petName.className = 'pets-card-title'
+    petName.textContent = name
+
+    let button = document.createElement('button')
+    button.className = 'button-outlined'
+    button.textContent = 'Learn more'
+
+    button.addEventListener('click', () => createModal(name))
+
+    card.append(img, petName, button)
+    return card
+}
 
 if (location.pathname === '/') {
-var     leftButton = document.getElementById('left-button'),
-        rightButton = document.getElementById('right-button'),
-        sliderBox = document.getElementsByClassName('slider-items')[0];
-leftButton.addEventListener('click', prevSlide);
-rightButton.addEventListener('click', nextSlide);
+    var     leftButton = document.getElementById('left-button'),
+            rightButton = document.getElementById('right-button'),
+            sliderBox = document.getElementsByClassName('slider-items')[0];
+    leftButton.addEventListener('click', prevSlide);
+    rightButton.addEventListener('click', nextSlide);
+    const items = [...document.getElementsByClassName('card')];
+    items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
 }
-const items = [...document.getElementsByClassName('card')];
-items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
+
+if (location.pathname === '/our-pets.html') {
+    var firstPageButton = document.getElementById('first-page'),
+        prevPageButton = document.getElementById('prev-page'),
+        currentPageButton = document.getElementById('currentPage'),
+        nextPageButton = document.getElementById('next-page'),
+        lastPageButton = document.getElementById('last-page');
+
+    if (currentPage === pages) {
+        nextPageButton.disabled = true;
+        lastPageButton.disabled = true;
+    }
+
+    firstPageButton.addEventListener('click', () => {
+        currentPage = 1;
+        petContentRender(currentPage - 1)
+        currentPageButton.textContent = currentPage
+        firstPageButton.disabled = true
+        prevPageButton.disabled = true
+        if (currentPage === pages) {
+            nextPageButton.disabled = false
+            lastPageButton.disabled = false
+        }
+    })
+
+    prevPageButton.addEventListener('click', () => {
+        currentPage = currentPage - 1;
+        petContentRender(currentPage - 1)
+        currentPageButton.textContent = currentPage
+        if (currentPage === 1) {
+            firstPageButton.disabled = true
+            prevPageButton.disabled = true
+        }
+        nextPageButton.disabled = false
+        lastPageButton.disabled = false
+    })
+
+    nextPageButton.addEventListener('click', () => {
+        currentPage = currentPage + 1;
+        petContentRender(currentPage - 1)
+        currentPageButton.textContent = currentPage
+        firstPageButton.disabled = false
+        prevPageButton.disabled = false
+        if (currentPage === pages) {
+            nextPageButton.disabled = true
+            lastPageButton.disabled = true
+        }
+    })
+
+    lastPageButton.addEventListener('click', () => {
+        currentPage = pages;
+        petContentRender(currentPage - 1)
+        currentPageButton.textContent = currentPage
+        firstPageButton.disabled = false
+        prevPageButton.disabled = false
+        nextPageButton.disabled = true
+        lastPageButton.disabled = true
+    })
+
+
+    }
 
 function prevSlide() {
     console.log('clicked')

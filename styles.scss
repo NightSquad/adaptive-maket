@@ -41,9 +41,8 @@ $color-light-l: #F6F6F6;
     right: 0;
     bottom: 0;
     background-color: rgba(41,41,41, 0.6);
-    display: flex;
+    display: none;
     justify-content: flex-end;
-    opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 2;
 
@@ -78,6 +77,18 @@ $color-light-l: #F6F6F6;
             color: white;
         }
     }
+}
+
+.active-menu {
+    right: 0 !important;
+}
+
+.display {
+    display: flex;
+}
+
+.rotate {
+    transform: rotate(90deg);
 }
 
 .button-round {
@@ -374,18 +385,6 @@ a {
     background: none;
     border: none;
     transition: all .5s ease;
-}
-
-.active-menu {
-    opacity: 1;
-    .menu-box {
-        right: 0;
-        transition: all 0.5s ease;
-    }
-}
-
-.rotate {
-    transform: rotate(90deg);
 }
 
 // ----------------------------------- Start screen -------------------------------------
@@ -823,9 +822,11 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-
     .dark {
-        padding: 0;
+        padding: 30px 50px 30px 10px;
+        .wrapper {
+            padding: 0;
+        }
     }
     header {
         padding: 30px 53px 0 10px;
