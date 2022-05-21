@@ -95,6 +95,26 @@ if (location.pathname === '/') {
     items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
 }
 
+function updatePage() {
+    petContentRender(currentPage - 1)
+    currentPageButton.textContent = currentPage
+    if (currentPage === 1) {
+        firstPageButton.disabled = true;
+        prevPageButton.disabled = true;
+    } else {
+        firstPageButton.disabled = false;
+        prevPageButton.disabled = false;
+    }
+    if (currentPage === pages) {
+        nextPageButton.disabled = true;
+        lastPageButton.disabled = true;
+    } else
+    {
+        nextPageButton.disabled = false;
+        lastPageButton.disabled = false;        
+    }
+}
+
 if (location.pathname === '/our-pets.html') {
     var firstPageButton = document.getElementById('first-page'),
         prevPageButton = document.getElementById('prev-page'),
@@ -102,59 +122,30 @@ if (location.pathname === '/our-pets.html') {
         nextPageButton = document.getElementById('next-page'),
         lastPageButton = document.getElementById('last-page');
 
-    if (currentPage === pages) {
-        nextPageButton.disabled = true;
-        lastPageButton.disabled = true;
-    }
+    updatePage()
 
     firstPageButton.addEventListener('click', () => {
         currentPage = 1;
-        petContentRender(currentPage - 1)
-        currentPageButton.textContent = currentPage
-        firstPageButton.disabled = true
-        prevPageButton.disabled = true
-        if (currentPage === pages) {
-            nextPageButton.disabled = false
-            lastPageButton.disabled = false
-        }
+        updatePage()
     })
 
     prevPageButton.addEventListener('click', () => {
         currentPage = currentPage - 1;
-        petContentRender(currentPage - 1)
-        currentPageButton.textContent = currentPage
-        if (currentPage === 1) {
-            firstPageButton.disabled = true
-            prevPageButton.disabled = true
-        }
-        nextPageButton.disabled = false
-        lastPageButton.disabled = false
+        updatePage()
     })
 
     nextPageButton.addEventListener('click', () => {
         currentPage = currentPage + 1;
-        petContentRender(currentPage - 1)
-        currentPageButton.textContent = currentPage
-        firstPageButton.disabled = false
-        prevPageButton.disabled = false
-        if (currentPage === pages) {
-            nextPageButton.disabled = true
-            lastPageButton.disabled = true
-        }
+        updatePage()
     })
 
     lastPageButton.addEventListener('click', () => {
         currentPage = pages;
-        petContentRender(currentPage - 1)
-        currentPageButton.textContent = currentPage
-        firstPageButton.disabled = false
-        prevPageButton.disabled = false
-        nextPageButton.disabled = true
-        lastPageButton.disabled = true
+        updatePage()
     })
+}
 
 
-    }
 
 function prevSlide() {
     console.log('clicked')
