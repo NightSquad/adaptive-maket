@@ -696,7 +696,28 @@ a {
 
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1279px) {
+    .modal {
+        .modal-window {
+            width: 630px;
+            height: 350px;
+            .content {
+                margin: 10px 9px 37px 11px;
+                .description {
+                    margin: 20px 0 0 0;
+                }
+                ul {
+                    margin-top: 20px;
+                    row-gap: 6px;
+                }
+            }
+            .petImage {
+                width: 350px;
+                height: 350px;
+            }
+        }
+    }
+
     .wrapper {
         width: 100%;
     }
@@ -806,9 +827,14 @@ a {
     }
 
     .footer {
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
         padding-top: 30px;
         
         .footer-content {
+            width: 708px;
             column-gap: 60px;
             flex-wrap: wrap;
             justify-content: center;
@@ -821,7 +847,36 @@ a {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+    .modal {
+        .modal-window {
+            width: 240px;
+            height: 341px;
+            padding: 10px;
+            .content {
+                margin: 0;
+                text-align: center;
+
+                .description {
+                    text-align: justify;
+                    margin: 20px 0 0 0;
+                }
+                ul {
+                    row-gap: 6px;
+                    margin-top: 24px;
+                    text-align: left;
+                }
+            }
+            .petImage{
+                display: none;
+            }
+
+            .close {
+                right: -26px;
+            }
+        }
+    }
+
     .dark {
         padding: 30px 50px 30px 10px;
         .wrapper {
@@ -1022,6 +1077,7 @@ a {
             text-align: center;
         }
         .footer-content {
+            width: 300px;
             justify-content: center;
             row-gap: 40px;
             .info {

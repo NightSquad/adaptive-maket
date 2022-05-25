@@ -182,6 +182,7 @@ function createModal(name) {
     let petImage = document.createElement('img')
     petImage.src = "./assets/images/pets/pets-" + name.toLowerCase() + ".png" 
     petImage.alt = name;
+    petImage.className = 'petImage'
 
     let content = document.createElement('div');
     content.className = 'content'
