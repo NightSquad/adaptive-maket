@@ -31,10 +31,6 @@ function petContentRender(page) {
     }
 }
 
-
-
-petContentRender(currentPage - 1)
-
 const sliderConfig = {
     'sm': {width: 1, offset: 310},
     'm': {width: 2, offset: 310},
@@ -91,7 +87,7 @@ if (location.pathname === '/') {
             sliderBox = document.getElementsByClassName('slider-items')[0];
     leftButton.addEventListener('click', prevSlide);
     rightButton.addEventListener('click', nextSlide);
-    const items = [...document.getElementsByClassName('card')];
+    var items = [...document.getElementsByClassName('card')];
     items.map(el => el.childNodes[5].addEventListener('click', () => createModal(el.childNodes[3].textContent)))
 }
 
@@ -121,6 +117,8 @@ if (location.pathname === '/our-pets.html') {
         currentPageButton = document.getElementById('currentPage'),
         nextPageButton = document.getElementById('next-page'),
         lastPageButton = document.getElementById('last-page');
+
+    petContentRender(currentPage - 1)
 
     updatePage()
 
