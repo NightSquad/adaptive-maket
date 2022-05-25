@@ -81,7 +81,7 @@ function createCard(name) {
     return card
 }
 
-if (location.pathname === '/') {
+if (location.pathname === '/adaptive-maket/') {
     var     leftButton = document.getElementById('left-button'),
             rightButton = document.getElementById('right-button'),
             sliderBox = document.getElementsByClassName('slider-items')[0];
@@ -111,7 +111,7 @@ function updatePage() {
     }
 }
 
-if (location.pathname === '/our-pets.html') {
+if (location.pathname === '/adaptive-maket/our-pets.html') {
     var firstPageButton = document.getElementById('first-page'),
         prevPageButton = document.getElementById('prev-page'),
         currentPageButton = document.getElementById('currentPage'),
